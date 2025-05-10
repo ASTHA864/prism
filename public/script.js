@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 const subBtn = document.querySelector("#input-text-submit-btn");
 const result = document.querySelector(".output");
 const speakBtn = document.querySelector(".speak-btn");
+const inputElement = document.querySelector("textarea");
 const textElements = [];
 const audioElements = [];
 
@@ -75,4 +76,10 @@ speakBtn.addEventListener("click", async () => {
     textElements[i].classList.remove("highlight");
     await new Promise((resolve) => setTimeout(resolve, 500));
   }
+});
+
+inputElement.addEventListener("input", () => {
+  inputElement.style.overflowX="hidden";
+  inputElement.style.overflowX = "scroll";
+  inputElement.rows="3";
 });
