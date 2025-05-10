@@ -42,6 +42,9 @@ subBtn.addEventListener("click", async (event) => {
           textElements.push(textElement);
         }
       }
+      setTimeout(() => {
+        speakBtn.style.display = "block";
+      }, 3000);
       for (let i = 0; i < textElements.length; i++) {
         let text = textElements[i].innerHTML;
         const audioResponse = await fetch(
@@ -52,9 +55,6 @@ subBtn.addEventListener("click", async (event) => {
           const audioUrl = URL.createObjectURL(audioBlob);
           const audio = new Audio(audioUrl);
           audioElements.push(audio);
-          setTimeout(() => {
-            speakBtn.style.display = "block";
-          }, 3000);
         } else {
           console.error("Failed to fetch audio for:", text);
         }
@@ -67,6 +67,9 @@ subBtn.addEventListener("click", async (event) => {
 });
 
 speakBtn.addEventListener("click", async () => {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 1500);
+  });
   for (let i = 0; i < audioElements.length; i++) {
     textElements[i].classList.add("highlight");
     await new Promise((resolve) => {
@@ -79,7 +82,7 @@ speakBtn.addEventListener("click", async () => {
 });
 
 inputElement.addEventListener("input", () => {
-  inputElement.style.overflowX="hidden";
+  inputElement.style.overflowX = "hidden";
   inputElement.style.overflowX = "scroll";
-  inputElement.rows="3";
+  inputElement.rows = "3";
 });

@@ -70,7 +70,6 @@ app.get("/synthesize_audio", async (req, res) => {
       (result) => {
         synthesizer.close(); // Close the synthesizer when done
         if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-          console.log("Speech synthesis completed.");
           const audioData = result.audioData; // audioData is an ArrayBuffer
           const audioBuffer = Buffer.from(audioData);
 
