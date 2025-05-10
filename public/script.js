@@ -8,6 +8,7 @@ const audioElements = [];
 subBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   subBtn.disabled = true;
+  speakBtn.style.display = "none";
   const inputText = form["input-text"].value;
   if (inputText.length === 0) {
     alert("Give input Text First");
@@ -50,6 +51,9 @@ subBtn.addEventListener("click", async (event) => {
           const audioUrl = URL.createObjectURL(audioBlob);
           const audio = new Audio(audioUrl);
           audioElements.push(audio);
+          setTimeout(() => {
+            speakBtn.style.display = "block";
+          }, 3000);
         } else {
           console.error("Failed to fetch audio for:", text);
         }

@@ -100,6 +100,7 @@ form button:hover {
 
 .speak-btn {
   position: fixed;
+  display: none;
   bottom: var(--spacing);
   right: var(--spacing);
   background-color: var(--accent-color);
