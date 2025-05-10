@@ -10,7 +10,7 @@ subBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   subBtn.disabled = true;
   speakBtn.style.display = "none";
-  textElements.length = 0; 
+  textElements.length = 0;
   audioElements.length = 0;
   const inputText = form["input-text"].value;
   if (inputText.length === 0) {
@@ -19,7 +19,9 @@ subBtn.addEventListener("click", async (event) => {
     return;
   }
   try {
-    result.innerHTML = "Generating...";
+    // use a Font Awesome spinner
+    result.innerHTML =
+      '<i class="fas fa-spinner fa-spin"></i><span>\t Loading</span>';
     const encodedInputText = encodeURIComponent(inputText);
     const response = await fetch(
       `/generate_output?input_text=${encodedInputText}`
