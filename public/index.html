@@ -15,30 +15,39 @@
     <header>
       <img src="./prism.jpeg" alt="" />
       <h1>Prism</h1>
+
+      <details id="controls-panel" open>
+        <summary>
+          Settings
+          <i class="fa fa-chevron-up"></i>
+        </summary>
+        <div class="controls">
+          <div class="control-group">
+            <span>Word Spacing:</span>
+            <button id="word-decrease">–</button>
+            <button id="word-increase">+</button>
+          </div>
+          <div class="control-group">
+            <span>Letter Spacing:</span>
+            <button id="letter-decrease">–</button>
+            <button id="letter-increase">+</button>
+          </div>
+          <div class="control-group">
+            <span>Font:</span>
+            <select id="font-select">
+              <option value="Dyslexie, 'OpenDyslexic', system-ui">
+                Dyslexie
+              </option>
+              <option value="'OpenDyslexic', system-ui">OpenDyslexic</option>
+              <option value="Arial, sans-serif">Arial</option>
+              <option value="Georgia, serif">Georgia</option>
+            </select>
+          </div>
+        </div>
+      </details>
     </header>
     <main>
       <section class="card">
-        <!-- CONTROLS START -->
-        <details id="controls-panel" open>
-          <summary>
-            Text Spacing Controls
-            <i class="fa fa-chevron-up"></i>
-          </summary>
-          <div class="controls">
-            <div class="control-group">
-              <span>Word Spacing:</span>
-              <button id="word-decrease">–</button>
-              <button id="word-increase">+</button>
-            </div>
-            <div class="control-group">
-              <span>Letter Spacing:</span>
-              <button id="letter-decrease">–</button>
-              <button id="letter-increase">+</button>
-            </div>
-          </div>
-        </details>
-        <!-- CONTROLS END -->
-
         <form>
           <textarea name="input-text"> Enter Your Text Here </textarea>
           <button type="submit" id="input-text-submit-btn">Format</button>

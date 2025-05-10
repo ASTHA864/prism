@@ -10,6 +10,8 @@ subBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   subBtn.disabled = true;
   speakBtn.style.display = "none";
+  textElements.length = 0; 
+  audioElements.length = 0;
   const inputText = form["input-text"].value;
   if (inputText.length === 0) {
     alert("Give input Text First");
@@ -42,23 +44,23 @@ subBtn.addEventListener("click", async (event) => {
           textElements.push(textElement);
         }
       }
-      // setTimeout(() => {
-      //   speakBtn.style.display = "block";
-      // }, 3000);
-      // for (let i = 0; i < textElements.length; i++) {
-      //   let text = textElements[i].innerHTML;
-      //   const audioResponse = await fetch(
-      //     `/synthesize_audio?content=${encodeURIComponent(text)}`
-      //   );
-      //   if (audioResponse.ok) {
-      //     const audioBlob = await audioResponse.blob();
-      //     const audioUrl = URL.createObjectURL(audioBlob);
-      //     const audio = new Audio(audioUrl);
-      //     audioElements.push(audio);
-      //   } else {
-      //     console.error("Failed to fetch audio for:", text);
-      //   }
-      // }
+      setTimeout(() => {
+        speakBtn.style.display = "block";
+      }, 3000);
+      for (let i = 0; i < textElements.length; i++) {
+        let text = textElements[i].innerHTML;
+        const audioResponse = await fetch(
+          `/synthesize_audio?content=${encodeURIComponent(text)}`
+        );
+        if (audioResponse.ok) {
+          const audioBlob = await audioResponse.blob();
+          const audioUrl = URL.createObjectURL(audioBlob);
+          const audio = new Audio(audioUrl);
+          audioElements.push(audio);
+        } else {
+          console.error("Failed to fetch audio for:", text);
+        }
+      }
     }
   } catch (error) {
     result.innerHTML = `Error ${error} occured`;
@@ -111,3 +113,9 @@ document
 document
   .getElementById("letter-decrease")
   .addEventListener("click", () => adjustStyle("letterSpacing", -0.1, "px"));
+
+// wire up font‐picker
+const fontSelect = document.getElementById("font-select");
+fontSelect.addEventListener("change", () => {
+  document.body.style.fontFamily = fontSelect.value;
+});
