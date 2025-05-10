@@ -8,28 +8,28 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
-    <title>Prism</title>
+    <title>Prism - Text Formatter</title>
   </head>
 
   <body>
+    <header>
+      <img src="./prism.jpeg" alt="">
+      <h1>Prism</h1>
+    </header>
     <main>
-      <h1>Prism Text Formatter</h1>
-      <form>
-        <div class="prompt-box">
-          <label>
-            <input type="text" placeholder="Enter Text" name="input-text" />
-          </label>
-          <button type="submit" id="input-text-submit-btn">Go</button>
+      <section class="card">
+        <form>
+          <input type="text" placeholder="Enter Text" name="input-text" />
+          <button type="submit" id="input-text-submit-btn">Generate</button>
+        </form>
+        <div class="output">
+          <p>(Results will appear here)</p>
         </div>
-      </form>
-
-      <div class="output">
-        <span>(Results will appear here)</span>
-      </div>
-      <button onclick="speakText()">
-        <i class="fa-solid fa-volume-high"></i>
-      </button>
+      </section>
     </main>
-    <script type="module" src="./script.js"></script>
+    <button class="speak-btn" onclick="speakText()">
+      <i class="fa-solid fa-volume-high"></i>
+    </button>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

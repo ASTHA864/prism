@@ -1,87 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap");
+
+:root {
+  --accent-color: #5c9ded; /* Slightly stronger pastel blue accent */
+  --background-color: #fdfdfd; /* Very light background for reduced visual stress */
+  --text-color: #1a1a1a; /* Dark text for good contrast */
+  --card-background: #ffffff;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --spacing: 16px;
+}
+
 body {
-  margin: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: "OpenDyslexic", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
-  --accent-color: #CDC1FF;
-  background-color: #BFECFF;
-  color: #202124;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.8; /* Increased line-height for better readability */
+  letter-spacing: 0.5px; /* Slight letter spacing adjustment */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: var(--accent-color);
+  padding: calc(var(--spacing) * 1.5);
+}
+
+header img {
+  height: 40px; /* Fixed height */
+  width: 40px; /* Fixed width to form a square */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the area properly */
+  margin-right: 12px; /* Spacing between logo and title */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px; /* Reduced font size for a minimalist look */
+  color: #fff;
+  font-weight: bold;
+  text-align: left;
 }
 
 main {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 24px;
-  max-width: 460px;
-  margin: 0 auto;
-  position: relative;
-  border-radius: 20px;
-}
-
-* {
-  outline-color: var(--accent-color);
-}
-
-h1 {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin: 0 auto;
-  font-size: 24px;
+  min-height: calc(100vh - 72px);
+  padding: 24px;
 }
 
-h1::before {
-  content: "";
-  display: inline-block;
-  background: url(gemini.svg);
-  width: 40px;
-  height: 40px;
-  background-size: cover;
+.card {
+  background-color: var(--card-background);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px var(--shadow-color);
+  width: 100%;
+  max-width: 480px;
 }
 
 form {
-  margin: 0;
-}
-
-.prompt-box {
-  margin: 24px 0;
-  width: 100%;
   display: flex;
-  gap: 8px;
-  align-items: flex-end;
-}
-
-label {
-  display: flex;
-  flex: 1;
   flex-direction: column;
-  gap: 8px;
-  font-size: 12px;
+  gap: var(--spacing);
 }
 
-input,
-button {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 12px 16px;
-  font-family: unset;
+form input,
+form button {
+  padding: 14px 18px;
   font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
 
-button {
-  border-color: var(--accent-color);
+form button {
   background-color: var(--accent-color);
-  color: white;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
-  opacity: 1;
+  border: none;
+  transition: opacity 0.3s ease;
 }
 
-button:focus-visible {
-  outline: 2px solid white;
-  outline-offset: -4px;
+form button:hover {
+  opacity: 0.85;
 }
 
-button:hover {
-  opacity: 0.95;
+.output {
+  margin-top: calc(var(--spacing) * 1.5);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+  border-top: 1px dashed var(--border-color);
+  padding-top: var(--spacing);
+}
+
+.speak-btn {
+  position: fixed;
+  bottom: var(--spacing);
+  right: var(--spacing);
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+.speak-btn:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 24px;
+  }
 }
