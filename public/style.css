@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap");
 
 :root {
-  --accent-color: #5c9ded; /* Slightly stronger pastel blue accent */
-  --background-color: #fdfdfd; /* Very light background for reduced visual stress */
-  --text-color: #1a1a1a; /* Dark text for good contrast */
+  --accent-color: #5c9ded;
+  --background-color: #fdfdfd;
+  --text-color: #1a1a1a;
   --card-background: #ffffff;
   --border-color: #ddd;
   --shadow-color: rgba(0, 0, 0, 0.1);
@@ -18,8 +18,8 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--background-color);
   color: var(--text-color);
-  line-height: 1.8; /* Increased line-height for better readability */
-  letter-spacing: 0.5px; /* Slight letter spacing adjustment */
+  line-height: 1.8;
+  letter-spacing: 0.5px;
 }
 
 header {
@@ -30,16 +30,16 @@ header {
 }
 
 header img {
-  height: 40px; /* Fixed height */
-  width: 40px; /* Fixed width to form a square */
-  border-radius: 50%; /* Makes the image circular */
-  object-fit: cover; /* Ensures the image covers the area properly */
-  margin-right: 12px; /* Spacing between logo and title */
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 24px; /* Reduced font size for a minimalist look */
+  font-size: 24px;
   color: #fff;
   font-weight: bold;
   text-align: left;
