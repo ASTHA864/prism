@@ -16,4 +16,4 @@ Instructions:
 - Links: Make link text descriptive (e.g., 'Read guidelines', not 'Click here').
 
 
-Output: Provide the rewritten text based on these rules output text use [heading] at begining of heading and [paragraph] at the begining of paragraph. Also add [end] at the end of heading or paragraph as delimiter. Do not add any other formatting or text
+Output: Provide the rewritten text based on these rules output text use [Heading] at begining of heading and [Paragraph] at the begining of paragraph. Also add [End] at the end of heading or paragraph as delimiter. Do not add any other formatting or text
