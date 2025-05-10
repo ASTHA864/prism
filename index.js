@@ -55,7 +55,7 @@ app.get("/synthesize_audio", async (req, res) => {
   }
   try {
     const speechConfig = sdk.SpeechConfig.fromSubscription(
-      process.env.SPEECH_API,
+      process.env.SPEECH_API_KEY,
       process.env.REGION
     );
     speechConfig.speechSynthesisVoiceName = "en-US-EmmaMultilingualNeural";

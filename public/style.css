@@ -18,8 +18,9 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--background-color);
   color: var(--text-color);
-  line-height: 1.8;
-  letter-spacing: 0.5px;
+  line-height: 2 !important;
+  word-spacing: 3.5 !important;
+  letter-spacing: 1.35 !important;
 }
 
 header {
@@ -92,7 +93,6 @@ form button:hover {
 .output {
   margin-top: calc(var(--spacing) * 1.5);
   font-size: 16px;
-  line-height: 1.5;
   color: var(--text-color);
   border-top: 1px dashed var(--border-color);
   padding-top: var(--spacing);
@@ -120,4 +120,8 @@ form button:hover {
   .card {
     padding: 24px;
   }
+}
+
+.highlight {
+  background-color: #fffbcc !important;
 }
