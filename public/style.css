@@ -127,3 +127,72 @@ form button:hover {
   background-color: #fffbcc !important;
 }
 
+/* filepath: [style.css](http://_vscodecontentref_/0) */
+/* panel wrapper */
+details#controls-panel {
+  margin-bottom: 1rem;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* hide default marker */
+details#controls-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+/* summary line */
+details#controls-panel summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  background: #f0f0f0;
+  user-select: none;
+}
+
+/* chevron icon */
+details#controls-panel summary i {
+  transition: transform 0.3s ease;
+}
+details#controls-panel[open] summary i {
+  transform: rotate(180deg);
+}
+
+/* controls grid */
+details#controls-panel .controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* individual control styling */
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.control-group span {
+  flex-shrink: 0;
+  color: #333;
+}
+.controls button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #4a90e2;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.controls button:hover {
+  background: #357abd;
+}

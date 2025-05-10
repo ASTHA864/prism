@@ -42,23 +42,23 @@ subBtn.addEventListener("click", async (event) => {
           textElements.push(textElement);
         }
       }
-      setTimeout(() => {
-        speakBtn.style.display = "block";
-      }, 3000);
-      for (let i = 0; i < textElements.length; i++) {
-        let text = textElements[i].innerHTML;
-        const audioResponse = await fetch(
-          `/synthesize_audio?content=${encodeURIComponent(text)}`
-        );
-        if (audioResponse.ok) {
-          const audioBlob = await audioResponse.blob();
-          const audioUrl = URL.createObjectURL(audioBlob);
-          const audio = new Audio(audioUrl);
-          audioElements.push(audio);
-        } else {
-          console.error("Failed to fetch audio for:", text);
-        }
-      }
+      // setTimeout(() => {
+      //   speakBtn.style.display = "block";
+      // }, 3000);
+      // for (let i = 0; i < textElements.length; i++) {
+      //   let text = textElements[i].innerHTML;
+      //   const audioResponse = await fetch(
+      //     `/synthesize_audio?content=${encodeURIComponent(text)}`
+      //   );
+      //   if (audioResponse.ok) {
+      //     const audioBlob = await audioResponse.blob();
+      //     const audioUrl = URL.createObjectURL(audioBlob);
+      //     const audio = new Audio(audioUrl);
+      //     audioElements.push(audio);
+      //   } else {
+      //     console.error("Failed to fetch audio for:", text);
+      //   }
+      // }
     }
   } catch (error) {
     result.innerHTML = `Error ${error} occured`;
@@ -86,3 +86,28 @@ inputElement.addEventListener("input", () => {
   inputElement.style.overflowX = "scroll";
   inputElement.rows = "3";
 });
+
+// helper to adjust a numeric style on body
+function adjustStyle(prop, delta, unit = "") {
+  const bodyStyle = window.getComputedStyle(document.body)[prop];
+  let current = parseFloat(bodyStyle);
+  if (isNaN(current)) current = parseFloat(document.body.style[prop]) || 1;
+  const updated = +(current + delta).toFixed(2);
+  document.body.style[prop] = updated + unit;
+}
+
+// wire up each button
+
+document
+  .getElementById("word-increase")
+  .addEventListener("click", () => adjustStyle("wordSpacing", 1, "px"));
+document
+  .getElementById("word-decrease")
+  .addEventListener("click", () => adjustStyle("wordSpacing", -1, "px"));
+
+document
+  .getElementById("letter-increase")
+  .addEventListener("click", () => adjustStyle("letterSpacing", 0.1, "px"));
+document
+  .getElementById("letter-decrease")
+  .addEventListener("click", () => adjustStyle("letterSpacing", -0.1, "px"));
