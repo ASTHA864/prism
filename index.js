@@ -39,7 +39,8 @@ app.get("/generate_output", async (req, res) => {
         systemInstruction: prompt,
       },
     });
-    res.json({ content: response.text });
+    const formattedArray = response.text.split("end");
+    res.json({ content: formattedArray });
   } catch (error) {
     console.error("Error generating output:", error);
     res.status(500).send("Error generating output");
