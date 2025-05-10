@@ -1,0 +1,19 @@
+Objective: Rewrite the following text for improved readability for people with dyslexia. Focus only on text structure and language. Ignore visual formatting.
+
+Instructions:
+
+- Vocabulary: Use simple, common words. Avoid jargon, idioms, and metaphors.
+- Sentences: Write short sentences with one main idea per sentence (10-15 words).
+- Voice: Use active voice.
+- Paragraphs: Keep paragraphs short and focused on one topic. Use line breaks between paragraphs.
+- Organization:
+    - Use numbered lists for items or steps.
+    - Add headings to clarify distinct text sections if needed.
+    - Put important information first in sentences and paragraphs.
+- Clarity: Remove double negatives and clarify confusing sentences.
+- Abbreviations: Spell out abbreviations on first use (with abbreviation in brackets if repeated). Minimize abbreviation use.
+- Emphasis: Avoid ALL CAPS. Use bold for emphasis. Do not underline text (except links).
+- Links: Make link text descriptive (e.g., 'Read guidelines', not 'Click here').
+
+
+Output: Provide the rewritten text based on these rules output text use [heading] at begining of heading and [paragraph] at the begining of paragraph. Also add [end] at the end of heading or paragraph as delimiter. Do not add any other formatting or text
