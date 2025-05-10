@@ -69,7 +69,7 @@ form {
   gap: var(--spacing);
 }
 
-form input,
+form textarea,
 form button {
   padding: 14px 18px;
   font-size: 16px;
@@ -126,3 +126,4 @@ form button:hover {
 .highlight {
   background-color: #fffbcc !important;
 }
+
